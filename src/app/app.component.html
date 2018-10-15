@@ -1,33 +1,36 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="container m-4">
-  <div class="row">
-    <input type="text" class="form-control" name="" id="">
+<div class="container">
+  <div class="container m-4">
+    <div class="row">
+      <input [(ngModel)]="buscar_artist" type="text" class="form-control m-3"  name="buscar_artist">
+    </div>
+    <button  (click)='getArtista()'>Buscar</button>
   </div>
-</div>
 
-<div class="container text-center m-4" (ngSubmit) ='getData()'>
-  <div class="col 12">
-    <img src="https://lastfm-img2.akamaized.net/i/u/174s/1142b199f4d20a145f468ad1198ca90c.png" alt="">
+  <div class="container text-center m-4">
+    <div class="col 12">
+      <img src="{{artista.imagen}}" alt="">
+    </div>
+    <div class="col 12">
+      <h2>{{artista.nombre}}</h2>
+    </div>
+    <div class="col 12">
+      <a target="_blank" href="https://www.last.fm/home">Last.fm</a>
+    </div>
+    <div class="col 12">
+      <span>Oyentes : {{artista.listeners}}</span>
+    </div>
   </div>
-  <div class="col 12">
-    <h2>{{this.nombre}}</h2>
-  </div>
-  <div class="col 12">
-    <a target="_blank" href="https://www.last.fm/home">Last</a>
-  </div>
-  <div class="col 12">
-    <span>Can. de Oyentes</span>
-  </div>
-</div>
 
-<div class="container m-4">
-  <div class="col 12 text-center">
-    <h3>Canciones</h3>
-  </div>
-  <div class="col 12 text-center">
-    <ul>
-      <li></li>
-      <li></li>
-    </ul>
+  <div class="container m-4">
+    <div class="col 12 text-center">
+      <h3>Canciones</h3>
+    </div>
+    <div class="col 12 text-center">
+      <ul>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
   </div>
 </div>

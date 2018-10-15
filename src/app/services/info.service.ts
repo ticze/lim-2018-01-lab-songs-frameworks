@@ -8,10 +8,12 @@ import { map } from 'rxjs/operators';
 export class infoArtis {
 
   constructor(private http: HttpClient) { }
-  getData() {
+  getData(name_Artista: string) {
   
-    return this.http.get('https://ws.audioscrobbler.com/2.0/?method=artist.getInfo&artist=Rihanna&api_key=a0041104ef7bbd3e6d2f0f0fa7d2b503&format=json')
-    .pipe(map(data => data['artist'].name))
-  }
+    return this.http.get(`https://ws.audioscrobbler.com/2.0/?method=artist.getInfo&artist=${name_Artista}&api_key=a0041104ef7bbd3e6d2f0f0fa7d2b503&format=json`)
+    /* .pipe(map(data => 
+    data['artist'].name)
+    )*/
+  } 
 }
 
