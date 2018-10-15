@@ -21,11 +21,9 @@ export class AppComponent {
     imagen: '',
     listeners: ''
   }
-  title = 'lab song';
-
 
   constructor(private apiService: infoArtis) { }
-
+  
   getArtista() {
     this.apiService.getData(this.buscar_artist)
       .subscribe((data: any) => {
