@@ -4,7 +4,7 @@
     <div class="row">
       <input [(ngModel)]="buscar_artist" type="text" class="form-control m-3"  name="buscar_artist">
     </div>
-    <button  (click)='getArtista()'>Buscar</button>
+    <button class="btn btn-info" (click)='getArtista()'>Buscar</button>
   </div>
 
   <div class="container text-center m-4">
@@ -15,7 +15,7 @@
       <h2>{{artista.nombre}}</h2>
     </div>
     <div class="col 12">
-      <a target="_blank" href="https://www.last.fm/home">Last.fm</a>
+      <a target="_blank" href="https://www.last.fm/search?q={{artista.nombre}}">Last.fm</a>
     </div>
     <div class="col 12">
       <span>Oyentes : {{artista.listeners}}</span>
