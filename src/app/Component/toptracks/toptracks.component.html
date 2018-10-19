@@ -1,0 +1,29 @@
+<div class="container m-4">
+  <button class="btn btn-info" (click)="getTopTrack()">Canciones</button>
+  <div class="col 12 text-center">
+    <h3>Canciones</h3>
+  </div>
+  <div class="col 12 text-center">
+    <table class="table ">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Nombres</th>
+          <th scope="col">Reproducciones</th>
+          <th scope="col">Like</th>
+          <th scope="col">Dislike</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let cancion of canciones">
+        <tr>        
+          <td>{{cancion.name}}</td>
+          <td>{{cancion.listeners}}</td>
+          <td><button (click)='likeContador(cancion)'>+</button></td>
+          <td><button (click)='dislikeContador(cancion)'>-</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <ul class="list-group">
+      <li class="list-group-item"></li>
+    </ul>
+  </div>
+</div>

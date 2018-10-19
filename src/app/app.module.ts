@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { topComponent } from './toptrack/top.components';
+import { ToptracksComponent } from './Component/toptracks/toptracks.component';
 @NgModule({
   declarations: [
     AppComponent,
-    topComponent
+    ToptracksComponent
   ],
   imports: [
     BrowserModule,
