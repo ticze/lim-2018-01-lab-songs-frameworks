@@ -1,47 +1,38 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { TopServService } from '../../srvtop/top-serv.service';
+import { Component, OnInit, Input } from "@angular/core";
+import { TopServService } from "../../srvtop/top-serv.service";
 
 @Component({
-  selector: 'app-toptracks',
-  templateUrl: './toptracks.component.html',
-  styleUrls: ['./toptracks.component.css']
+  selector: "app-toptracks",
+  templateUrl: "./toptracks.component.html",
+  styleUrls: ["./toptracks.component.css"]
 })
-
 export class ToptracksComponent implements OnInit {
-
-  canciones : any[] ; 
+  canciones: any[];
   like = 0;
 
-  @Input() cantante:string;
- 
-  constructor(private apiSer: TopServService) {  }
-  
-  ngOnInit() {
-  }
+  @Input()
+  cantante: string;
 
-  getTopTrack(){ 
-    this.apiSer.getTop(this.cantante)
-    .subscribe((data: any)=>{
+  constructor(private apiSer: TopServService) {}
+
+  ngOnInit() {}
+
+  getTopTrack() {
+    this.apiSer.getTop(this.cantante).subscribe((data: any) => {
       this.canciones = data;
-      this.like = data.listeners
-      
-       console.log(data)
-    
-        
-        
-    })
+      this.like = data.listeners;
+    });
   }
 
-  likeContador(indice){
+  likeContador(indice) {
     let contador = 0;
     const index = this.canciones.indexOf(indice);
-    contador = this.canciones[index]['listeners'] ++;
- /*  this.like = this.like + 1; */
+    contador = this.canciones[index]["listeners"]++;
   }
 
-  dislikeContador (indice){
+  dislikeContador(indice) {
     let contador = 0;
     const index = this.canciones.indexOf(indice);
-    contador = this.canciones[index]['listeners'] --;
+    contador = this.canciones[index]["listeners"]--;
   }
 }
